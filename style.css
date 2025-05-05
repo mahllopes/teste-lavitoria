@@ -1,0 +1,336 @@
+body.body-layout {
+  background-color: #f9fafb;
+  color: #1f2937;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.titulo-mb {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+/* SELECT DE PRODUTOS*/
+
+.select-produto-mb {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 7px;
+  max-width: 28rem;
+  font-size: 15px;
+  color: #707070;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CANVAS DO PRODUTO */
+
+.imagem-produto {
+  width: 100%;
+  max-width: 28rem;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* BOTOES AMARELOS*/
+
+.botoes-mb {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 28rem;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.botao-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botao,
+.botao-cor-mb,
+.botao-upload-mb,
+.botao-texto-mb,
+.botao-download-mb,
+.botao-info-mb {
+  flex: 1;
+  border-radius: 100%;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  background-color: #ffd900;
+  padding: 16px;
+
+}
+
+.botao-texto-mb,
+.botao-download-mb,
+.botao-info-mb {
+  padding: 16px 18px 16px 18px;
+}
+
+/*ICONES DOS BOTOES*/
+.botao-cor-mb::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f5aa";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.botao-cor-mb:hover {
+  background-color: #000000;
+  color: #ffd900;
+}
+
+.botao-upload-mb::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f03e";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.botao-upload-mb:hover {
+  background-color: #000000;
+  color: #ffd900;
+}
+
+.botao-texto-mb::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f031";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.botao-texto-mb:hover {
+  background-color: #000000;
+  color: #ffd900;
+}
+
+.botao-download-mb::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f019";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.botao-download-mb:hover {
+  background-color: #000000;
+  color: #ffd900;
+}
+
+.botao-info-mb::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\3f";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.botao-info-mb:hover {
+  background-color: #000000;
+  color: #ffd900;
+}
+
+
+/* MODAL */
+.modal {
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  width: 30vw;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal p {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.linha {
+  width: 100%;
+  height: 3px;
+  background-color: #ffd900;
+  margin-top: 0%;
+  margin-bottom: 15%;
+}
+
+.modal .botao-interno-mb {
+  appearance: none;
+  background-color: #212121;
+  border-radius: 5px;
+  padding: 7px;
+  width: 100%;
+  font-size: 12px;
+  color: #c9c9bf;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-interno-mb:hover {
+  background: #000000;
+  color: white;
+}
+
+/*UPLOAD DE IMAGEM*/
+
+.upload-btn-mb {
+  display: none;
+}
+
+.upload-label-mb {
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 7px 0px 7px 0px;
+  width: 100%;
+  text-align: center;
+  color: #707070;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.upload-label-mb:hover {
+  background: #232323;
+  color: white;
+}
+
+/*SELECT FONT*/
+
+.select-fonte-mb {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 13px;
+  color: #707070;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/*CAMPO TEXTO*/
+
+.campo-texto-mb {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 13px;
+  color: #707070;
+  cursor: pointer;
+  outline: none;
+  width: 90%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+/*COLOR PICKER*/
+
+.color-picker-mb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: none;
+  margin-top: 10px;
+}
+
+/* COLOR PICKER - Estilo para navegadores que usam o controle interno */
+.color-picker-mb::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 50%;
+}
+
+.color-picker-mb::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.color-picker-mb::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/*TUTORIAL*/
+.tutorial-div-mb {
+  width: 95%;
+  padding-top: 10%;
+}
+
+.tutorial-titulo-mb {
+  margin: 0;
+  font-weight: bold;
+  color: #111;
+  font-size: 20px;
+
+  text-decoration: underline;
+  text-decoration-color: #ffd900;
+  text-decoration-thickness: 3px; 
+  
+}
+
+.tutorial-texto-mb{
+  color: #666;
+  font-size: 16px;
+  padding-bottom: 5%;
+  text-align: justify;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalize seu Produto</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="body-layout">
+  <p class="titulo-mb">Personalize seu Produto</p>
+
+  <!-- Seletor de Produtos -->
+  <select id="produto-select" class="select-produto-mb">
+    <option value="">Selecione um produto</option>
+    <option value="Jaqueta">Jaqueta</option>
+    <option value="Calça">Calça</option>
+  </select>
+
+  <!-- Container com Canvas -->
+  <div class="imagem-produto" id="produto-imagem-container">
+    <canvas id="logo-canvas"></canvas>
+  </div>
+
+  <!-- Botões de Ação -->
+  <div class="botoes-mb">
+    <div class="botao-wrapper">
+      <button class="botao-cor-mb" onclick="toggleModal('modal-cor')"></button>
+      <div class="modal" id="modal-cor">
+        <p>Cor do Produto:</p>
+        <div class="linha"></div>
+        <div id="cores-container" style="display: flex; flex-wrap: wrap; gap: 5px;"></div>
+      </div>
+    </div>
+
+    <div class="botao-wrapper">
+      <button class="botao-upload-mb" onclick="toggleModal('modal-upload')"></button>
+      <div class="modal" id="modal-upload">
+        <p>Estampa:</p>
+        <div class="linha"></div>
+        <input type="file" id="logo-upload" class="upload-btn-mb" multiple accept="image/*" />
+        <label for="logo-upload" class="upload-label-mb">Selecionar imagem</label>
+
+        <button id="remove-bg-btn" class="botao-interno-mb" style="margin-top: 10px;">Remover fundo</button>
+        <button id="delete-image-btn" class="botao-interno-mb" style="margin-top: 10px;">Deletar imagem</button>
+      </div>
+    </div>
+
+    <div class="botao-wrapper">
+      <button class="botao-texto-mb" onclick="toggleModal('modal-texto')"></button>
+      <div class="modal" id="modal-texto">
+        <p>Texto:</p>
+        <div class="linha"></div>
+        <input type="text" id="textInput" class="campo-texto-mb" placeholder="Digite o texto" />
+
+        <select id="fontSelect" class="select-fonte-mb" style="margin-top: 10px;">
+          <option value="Arial">Arial</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Verdana">Verdana</option>
+        </select>
+
+        <div class="botoes-mb">
+          <input type="color" id="colorPicker" class="color-picker-mb" value="#000000" style="margin-top: 10px;" />
+          <button id="boldBtn" class="botao-interno-mb" style="font-weight: bold; margin-top: 10px;">B</button>
+          <button id="italicBtn" class="botao-interno-mb" style="font-style: normal; margin-top: 10px;">I</button>
+        </div>
+        <div class="botoes-mb">
+          <button id="addTextBtn" class="botao-interno-mb" style="margin-top: 10px;">Adicionar</button>
+          <button id="delete-text-btn" class="botao-interno-mb" style="margin-top: 10px;">Deletar</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="botao-wrapper">
+      <button class="botao-download-mb"></button>
+    </div>
+
+  </div>
+
+  <div class="tutorial-div-mb">
+    <p class="tutorial-titulo-mb" style="text-decoration: none; text-align: center; padding-bottom: 2%;">Como funciona a
+      Personalização Online LaVitória?</p>
+
+    <div class="linha" ;></div>
+    <table class="tutorial-table-mb">
+      <td>
+        <tr>
+          <p class="tutorial-titulo-mb">1° Personalização</p>
+          <p class="tutorial-texto-mb">Escolha o produto, cor e personalize da forma que preferir!</p>
+        </tr>
+        <tr>
+          <p class="tutorial-titulo-mb">2° Projeto</p>
+          <p class="tutorial-texto-mb">Clique em <i class="fas fa-download"></i>  <b>“Baixar Projeto”</b> para adquirir a imagem do produto
+            feito.
+          </p>
+        </tr>
+        <tr>
+          <p class="tutorial-titulo-mb">3° Envio</p>
+          <p class="tutorial-texto-mb">No chat de sua compra, envie a imagem do projeto feito <b>junto das
+              imagens/logos utilizadas.</b></p>
+        </tr>
+        <tr>
+          <p class="tutorial-titulo-mb">4° Detalhes</p>
+          <p class="tutorial-texto-mb">Converse com nossos vendedores para ajustar detalhes que vão além do
+            projeto feito por aqui, <b>como fontes diferentes, cores e variações!</b></p>
+        </tr>
+      </td>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
