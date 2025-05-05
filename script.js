@@ -17,6 +17,16 @@ window.addEventListener('click', (e) => {
   if (!e.target.closest('.modal') && !e.target.closest('.botao-wrapper')) {
     document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
   }
+
+const hammer = new Hammer(document.body);
+
+hammer.on('tap', (e) => {
+  const target = e.target;
+
+  if (!target.closest('.modal') && !target.closest('.botao-wrapper')) {
+    document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+  }
+});
 });
 
 // FUNÇÃO CORES E UPLOAD
